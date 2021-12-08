@@ -2,10 +2,10 @@ let fs = require('fs')
 
 const fastify = require('fastify')({
     logger: true,
-    https: {
-        key: fs.readFileSync('./tls/cert.key'),
-        cert: fs.readFileSync('./tls/cert.pem')
-    }
+    // https: {
+    //     key: fs.readFileSync('./tls/cert.key'),
+    //     cert: fs.readFileSync('./tls/cert.pem')
+    // }
 })
 
 fastify.get('/', async (request, reply) => {
