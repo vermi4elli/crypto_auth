@@ -1,4 +1,6 @@
-let fs = require('fs')
+const fs = require('fs')
+const path = require('path')
+const fastifyCors = require('fastify-cors')
 
 const fastify = require('fastify')({
     logger: true,
@@ -8,13 +10,21 @@ const fastify = require('fastify')({
     // }
 })
 
-fastify.get('/', async (request, reply) => {
-  return { hello: 'world' }
+fastify.register(require('fastify-static'), {
+  root: path.join(__dirname),
+  default: '/'
+}).register(fastifyCors, {
+  origin: '*',
+  methods: 'GET,POST,PUT,DELETE,OPTIONS',
+  allowedHeaders:
+    'Content-Type,Access-Control-Allow-Headers,Authorization,X-Requested-With,application/x-www-form-urlencoded'
+}).get('/', async (request, reply) => {
+  reply.status(200).sendFile('index.html');
 })
 
 const start = async () => {
   try {
-    await fastify.listen(process.env.PORT || 8080)
+    await fastify.listen(process.env.PORT || 5000)
   } catch (err) {
     fastify.log.error(err)
     process.exit(1)
