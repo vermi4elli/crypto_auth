@@ -5,9 +5,13 @@
     "node": "14.x"
   },
   "dependencies": {
+    "dotenv": "^10.0.0",
     "fastify": "^3.24.1",
     "fastify-cors": "^5.1.0",
-    "fastify-static": "^4.5.0"
+    "fastify-formbody": "^5.2.0",
+    "fastify-static": "^4.5.0",
+    "libsodium-wrappers": "^0.7.9",
+    "pg": "^8.7.1"
   },
   "scripts": {
     "start": "node server.js"

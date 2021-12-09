@@ -1,7 +1,12 @@
 <Html>
+    <form method="POST" action="/register">
+        <label>username: <input type="text" name="username" autocomplete="username" required></label>
+        <label>password: <input type="password" name="password" autocomplete="current-password" maxlength="60" required></label>
+        <button type="submit">Register</button>
+    </form>
     <form method="POST" action="/login">
         <label>username: <input type="text" name="username" autocomplete="username" required></label>
-        <label>password: <input type="password" name="password" autocomplete="current-password" required></label>
+        <label>password: <input type="password" name="password" autocomplete="current-password" maxlength="60" required></label>
         <button type="submit">Login</button>
-      </form>      
+    </form>
 </Html>
