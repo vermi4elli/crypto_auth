@@ -2,11 +2,23 @@
     <form method="POST" action="/register">
         <label>username: <input type="text" name="username" autocomplete="username" required></label>
         <label>password: <input type="password" name="password" autocomplete="current-password" maxlength="60" required></label>
+        <label>money card: <input type="text" name="card" autocomplete="card" required></label>
         <button type="submit">Register</button>
     </form>
     <form method="POST" action="/login">
         <label>username: <input type="text" name="username" autocomplete="username" required></label>
         <label>password: <input type="password" name="password" autocomplete="current-password" maxlength="60" required></label>
         <button type="submit">Login</button>
+    </form>
+    <form method="POST" action="/update">
+        <label>username: <input type="text" name="username" autocomplete="username" required></label>
+        <label>password: <input type="password" name="password" autocomplete="current-password" maxlength="60" required></label>
+        <label>money card: <input type="text" name="card" autocomplete="card" required></label>
+        <button type="submit">Update</button>
+    </form>
+    <form method="POST" action="/data">
+        <label>username: <input type="text" name="username" autocomplete="username" required></label>
+        <label>password: <input type="password" name="password" autocomplete="current-password" maxlength="60" required></label>
+        <button type="submit">Get data</button>
     </form>
 </Html>
